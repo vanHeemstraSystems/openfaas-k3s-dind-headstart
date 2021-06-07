@@ -1,0 +1,33 @@
+/containers/k3s-dind/docker-compose.yml
+/containers/k3s-dind/k3sconfig
+/containers/traefik/docker-compose.yml
+/containers/traefik/data/acme.json
+/containers/traefik/data/config.yml
+/containers/traefik/data/traefik.yml
+
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
+/containers/faas-netes/.glide/
+/containers/faas-netes/.idea
+
+faas-netes
+**/password.txt
+**/gateway-password.txt
+
+/containers/faas-netes/.vscode
+/containers/faas-netes/of_kind_portforward.pid
+/containers/faas-netes//kind*
+/containers/faas-netes//kubectl
+/containers/faas-netes//yaml_armhf
+/containers/faas-netes//yaml_arm64
