@@ -61,4 +61,23 @@ $ mkdir $HOME/.kube
 
 6. Now use kubectl to get the nodes
 
+***Note***: See prerequisites for installation of kubectl.
+
+***Tip***: (Optional) lookup the SERVER IP and PORT NUMBER from the k3sconfig file of the previous step.
+
+***Tip***: (Optional) lookup the USERNAME (e.g. admin) and PASSWORD (e.g 9645238463284ty246345345732tyy343264) from the k3sconfig file of the previous step.
+
+```
+$ kubectl --kubeconfig=$KUBECONFIG get nodes
+NAME  STATUS  ROLES  AGE  VERSION
+k3s   Ready   master 1m   v1.18.4+k3s1
+```
+
+7. To create a new cluster in k3s do the following:
+
+As an example only, do ***not*** create a cluster here and now:
+```
+$ kubectl --kubeconfig=$KUBECONFIG create cluster 
+```
+
 more ...
