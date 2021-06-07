@@ -73,6 +73,8 @@ NAME  STATUS  ROLES  AGE  VERSION
 k3s   Ready   master 1m   v1.18.4+k3s1
 ```
 
+***Tip***: If you get a certifiacte issue, start with a new k3s-dind container afresh from step 1.
+
 ***Tip***: In case your are not successful, try the following to find a possible cause of your problem:
 
 ```
