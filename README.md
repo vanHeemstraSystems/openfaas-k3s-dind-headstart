@@ -73,6 +73,12 @@ NAME  STATUS  ROLES  AGE  VERSION
 k3s   Ready   master 1m   v1.18.4+k3s1
 ```
 
+***Tip***: In case your are not successful, try the following to find a possible cause of your problem:
+
+```
+kubectl --insecure-skip-tls-verify cluster-info dump
+```
+
 7. To create a new cluster in k3s do the following:
 
 As an example only, do ***not*** create a cluster here and now:
