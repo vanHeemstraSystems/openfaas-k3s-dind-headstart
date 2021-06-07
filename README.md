@@ -37,7 +37,7 @@ a686584549b7   k3s-dind_k3s-dind   "/usr/local/bin/star…"   8 minutes ago   Up
 
 3. With the container running retrieve the kubeconfig file from the container.
 ```
-docker exec k3s get-kubeconfig.sh > ./k3sconfig
+$ docker exec k3s get-kubeconfig.sh > ./k3sconfig
 ```
 
 4. Set the environment variable KUBECONFIG to the location of the kube config file retrieved in the previous step.
@@ -76,7 +76,7 @@ k3s   Ready   master 1m   v1.18.4+k3s1
 ***Tip***: In case your are not successful, try the following to find a possible cause of your problem:
 
 ```
-kubectl --insecure-skip-tls-verify cluster-info dump
+$ kubectl --insecure-skip-tls-verify cluster-info dump
 ```
 
 7. To create a new cluster in k3s do the following:
