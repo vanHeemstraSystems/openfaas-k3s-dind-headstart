@@ -29,4 +29,21 @@ $ cd containers/k3s-dind/
 $ docker run -d --privileged --name k3s --hostname k3s -p 8443:8443 unboundedsystems/k3s-dind
 ```
 
-2. more ...
+2. Check if the container is running (CONTAINER ID may differ):
+```
+CONTAINER ID   IMAGE               COMMAND                  CREATED         STATUS         PORTS                                                      NAMES
+a686584549b7   k3s-dind_k3s-dind   "/usr/local/bin/star…"   8 minutes ago   Up 8 minutes   2375-2376/tcp, 0.0.0.0:8443->8443/tcp, :::8443->8443/tcp   k3s
+```
+
+3. With the container running retrieve the kubeconfig file from the container.
+```
+docker exec k3s get-kubeconfig.sh > ./k3sconfig
+```
+
+4. Set the environment variable KUBECONFIG to the location of the kube config file retrieved in the previous step.
+```
+$ readlink -f k3sconfig # use the path and filename returned from this command as the input for the next line
+$ export KUBECONFIG=/home/$USER/$PATH_TO_REPOSITORY/$REPOSITORY_NAME/containers/k3s-dind/k3sconfig # replace this with the output of previous line
+$ echo $KUBECONFIG
+```
+
