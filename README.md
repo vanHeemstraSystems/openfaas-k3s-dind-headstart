@@ -81,6 +81,42 @@ k3s   Ready   master 1m   v1.18.4+k3s1
 $ kubectl --insecure-skip-tls-verify cluster-info dump
 ```
 
+Look up the used namespaces, like so:
+
+```
+$ kubectl --kubeconfig=$KUBECONFIG get namespaces
+NAME              STATUS   AGE
+default           Active   23m
+kube-system       Active   23m
+kube-public       Active   23m
+kube-node-lease   Active   23m
+```
+
+Or filter pods by a specific namespace (here: default), this way:
+
+```
+$ kubectl --kubeconfig=$KUBECONFIG get pods -n default
+No resources found in default namespace.
+```
+
+```
+$ kubectl --kubeconfig=$KUBECONFIG get pods -n kube-system
+NAME                                     READY   STATUS              RESTARTS   AGE
+metrics-server-7566d596c8-9nllp          0/1     ContainerCreating   0          28m
+local-path-provisioner-6d59f47c7-xx7ck   0/1     ContainerCreating   0          28m
+coredns-8655855d6-7mnq7                  0/1     ContainerCreating   0          28m
+```
+
+```
+$ kubectl --kubeconfig=$KUBECONFIG get pods -n kube-public
+No resources found in kube-public namespace.
+```
+
+```
+$ kubectl --kubeconfig=$KUBECONFIG get pods -n kube-node-release
+No resources found in kube-node-release namespace.
+```
+
 7. To create a new cluster in k3s do the following:
 
 As an example only, do ***not*** create a cluster here and now:
