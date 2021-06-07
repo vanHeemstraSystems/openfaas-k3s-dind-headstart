@@ -47,3 +47,14 @@ $ export KUBECONFIG=/home/$USER/$PATH_TO_REPOSITORY/$REPOSITORY_NAME/containers/
 $ echo $KUBECONFIG
 ```
 
+5. Copy the kube config directory with all content from root to current user
+```
+$ whoami # check that the current user is you, i.e. not root
+$ sudo cp /root/.kube $HOME/.kube # this will write over any previous configuration
+$ sudo chown -R $USER $HOME/.kube
+$ sudo chgrp -R $USER $HOME/.kube # if this states that there is no such group, change it to your default group (use ls -la) 
+```
+
+6. Now use kubectl to get the nodes
+
+more ...
