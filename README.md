@@ -12,6 +12,9 @@ openfaas-k3s-dind-headstart
 k3s-dind stands for the lightweight Kubernetes (k3s) Docker in Docker (dind).
 
 ## k3s
+
+***Note***: See for k3s additional installation instructions https://github.com/vanHeemstraSystems/k3s-headstart
+
 In order to create and manage a Kubernetes cluster, follow these instructions:
 
 1. Build and run the k3s-dind container as follows:
